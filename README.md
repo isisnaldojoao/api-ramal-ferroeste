@@ -9,8 +9,9 @@ A API conta com sua documentação Swagger a respeito das rotas que estão dispo
 #### Retorna todos os itens
 
 ```http
-  GET /api/items
+GET /api/excel
 ```
+
 
 
 ![image](https://github.com/user-attachments/assets/d0a5e604-5756-4ee7-b65f-4ab9cd5b4624)
