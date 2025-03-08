@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  title: "API - Lista de Ramais"
+  description: "API para gerenciar uma lista de ramais do grupo Ferroeste."
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:3000/api
+    description: Servidor local
+
+paths:
+  /excel:
+    get:
+      summary: "Obter dados do arquivo Excel"
+      description: "Retorna os dados do arquivo Excel convertido para JSON."
+      tags:
+        - "Excel"
+      responses:
+        "200":
+          description: "Dados do Excel retornados com sucesso."
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    type: object
+                    additionalProperties: true
+        "500":
+          description: "Erro ao processar o arquivo Excel."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: "Mensagem de erro detalhada."
+
+components:
+  schemas:
+    ExcelData:
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          type: object
+          additionalProperties: true

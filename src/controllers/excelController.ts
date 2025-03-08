@@ -3,7 +3,7 @@ import { readExcelFile } from '../services/excelService';
 
 export const getExcelData = (req: Request, res: Response) => {
     try {
-        const filePath = './planilha-exemplo.xlsx'; // Você pode tornar isso dinâmico
+        const filePath = './lista-ramais.xlsx'; // Você pode tornar isso dinâmico
         const jsonData = readExcelFile(filePath);
         res.json(jsonData);
     } catch (error) {
